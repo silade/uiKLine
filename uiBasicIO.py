@@ -19,7 +19,8 @@ ALL_FUNC_BUTTON = []
 funcBtnPath = os.getcwd() + '/func-button/'
 allPath = glob.glob(funcBtnPath+r'*.py')
 for path in allPath:
-    fileName  = path.split("\\")[-1]
+    print(path)
+    fileName = path.split("\\")[-1]
     modelName = fileName.split(".")[0]
     ALL_FUNC_BUTTON.append(modelName)
     imp.load_source('ctaFuncButttons',path)

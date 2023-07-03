@@ -3,7 +3,7 @@
 import numba as nb
 import numpy as np
 
-@nb.autojit
+@nb.autojit()
 #------------------------------------------------
 def get_capital_np(markets,signals,size,commiRate,climit = 4, wlimit = 2, op=True):
     """使用numpy回测，标签的盈亏, op 表示是否延迟一个tick以后撮合"""

@@ -3,9 +3,10 @@
 插入所有需要的库，和函数
 """
 import numpy as np
-from ctaFunction.calcFunction import *
-from ctaFunction.visFunction import *
-
+import pandas as pd
+# from ctaFunction.calcFunction import *
+# from ctaFunction.visFunction import *
+import ctaFunction.visFunction as vis
 #----------------------------------------------------------------------
 def klBacktest(self):
     wLimit    = self.getInputParamByName('wLimit')
@@ -17,6 +18,6 @@ def klBacktest(self):
     tickers['askPrice1'] = self.pdBars['open']+sLippage
     markets   = tickers.values
     signals   = np.array(self.signalsOpen)
-    caps,poss = plotSigCaps(signals,markets,cLimit,wLimit,size=size)
-    plt.plot(range(len(caps)),caps)
-    plt.show()
+    caps,poss = vis.plotSigCaps(signals,markets,cLimit,wLimit,size=size)
+    vis.plt.plot(range(len(caps)),caps)
+    vis.plt.show()

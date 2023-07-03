@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import importlib
-import sip
-sip.setapi("QString", 2)
-sip.setapi("QVariant", 2)
+# import sip
+# sip.setapi("QString", 2)
+# sip.setapi("QVariant", 2)
 import sys
 importlib.reload(sys)
 import os
-os.environ['QT_API'] = 'pyqt'
+os.environ['QT_API'] = 'pyqt5'
 from uiBasicIO import uiBasicIO
 from uiKLine import KLineWidget
 # PyQt
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     cfgfile = QtCore.QFile('css.qss')
     cfgfile.open(QtCore.QFile.ReadOnly)
     styleSheet = cfgfile.readAll()
-    styleSheet = unicode(styleSheet, encoding='utf8')
+    styleSheet = str(styleSheet, encoding='utf8')
     app.setStyleSheet(styleSheet)
     # K线界面
     ui = uiKLineTool()

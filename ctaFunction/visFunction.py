@@ -3,7 +3,7 @@
 包含一些CTA因子的可视化函数
 """
 import matplotlib
-matplotlib.use('Qt4Agg')
+matplotlib.use('Qt5Agg')
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -11,7 +11,7 @@ import seaborn as sns
 #mpl.rcParams["font.sans-serif"] = ["Microsoft YaHei"]#
 #mpl.rcParams['axes.unicode_minus'] = False
 import matplotlib.pyplot as plt 
-from calcFunction import get_capital_np
+from ctaFunction.calcFunction import get_capital_np
 
 #----------------------------------------------------------------------
 def plotSigCaps(signals,markets,climit=4,wlimit=2,size=1,rate=0.0001,op=True):
