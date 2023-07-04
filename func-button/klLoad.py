@@ -4,19 +4,19 @@
 """
 import pandas as pd
 
-#----------------------------------------------------------------------
-def klLoad(self,bars=None):
-    """载入合约数据"""   
+
+# ----------------------------------------------------------------------
+def klLoad(self, bars=None):
+    """载入合约数据"""
     # bars = pd.DataFrame.from_csv('datasig.csv')
     bars = pd.read_csv('datasig.csv')
     kTool = self.canvas
     for sig in kTool.sigPlots:
         kTool.pwKL.removeItem(kTool.sigPlots[sig])
-    kTool.sigData  = {}
+    kTool.sigData = {}
     kTool.sigPlots = {}
     for sig in kTool.subSigPlots:
         kTool.pwOI.removeItem(kTool.subSigPlots[sig])
-    kTool.subSigData  = {}
+    kTool.subSigData = {}
     kTool.subSigPlots = {}
     self.loadData(bars)
-

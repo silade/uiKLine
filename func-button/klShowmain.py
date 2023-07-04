@@ -4,9 +4,9 @@
 """
 import pandas as pd
 
-#----------------------------------------------------------------------
-def klShowmain(self):
-    """信号分析报告"""   
-    sigName = self.getInputParamByName('signalName')
-    self.canvas.showSig({sigName:self.stateData[sigName]},True)
 
+# ----------------------------------------------------------------------
+def klShowmain(self):
+    """信号分析报告"""
+    sigName = self.getInputParamByName('signalName')
+    self.canvas.showSig({sigName: self.stateData[sigName]}, True)
