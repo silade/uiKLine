@@ -86,7 +86,7 @@ class uiBasicIO(QWidget):
     def loadInputSetting(self):
         """载入输入框界面配置"""
         settingFile = self.inpFile
-        with open(settingFile) as f:
+        with open(settingFile,encoding='utf-8') as f:
             for setting in json.load(f):
                 name        = setting['name']
                 label       = setting['label']
@@ -120,7 +120,8 @@ class uiBasicIO(QWidget):
     def loadButtonSetting(self):
         """载入按钮界面配置"""
         settingFile = self.btnFile
-        with open(settingFile) as f:
+        print(settingFile)
+        with open(settingFile,encoding='utf-8') as f:
             for setting in json.load(f):
                 label       = setting['label']
                 func        = setting['func']
@@ -164,7 +165,7 @@ class uiBasicIO(QWidget):
             qcLabel.setFont(QtGui.QFont("Roman times",10,QtGui.QFont.Bold))
             gridup.addWidget(qcLabel, 0, classIndex,1,i-classIndex)
             # 分隔符
-            for j in xrange(0,3):
+            for j in range(0,3):
                 qcSplit = QLabel(u'|')
                 qcSplit.setAlignment(QtCore.Qt.AlignCenter)
                 gridup.addWidget(qcSplit, j, i)
@@ -191,7 +192,7 @@ class uiBasicIO(QWidget):
             qcLabel.setFont(QFont("Roman times",10,QtGui.QFont.Bold))
             griddown.addWidget(qcLabel, 0, classIndex,1,i-classIndex)
             # 分隔符
-            for j in xrange(0,2):
+            for j in range(0,2):
                 qcSplit = QLabel(u'|')
                 qcSplit.setAlignment(QtCore.Qt.AlignCenter)
                 griddown.addWidget(qcSplit, j, i)
