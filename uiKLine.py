@@ -5,6 +5,7 @@ Support By 量投科技(http://www.quantdo.com.cn/)
 """
 import traceback
 import numpy as np
+import cgitb
 import pandas as pd
 from functools import partial
 from collections import deque
@@ -13,6 +14,7 @@ from qtpy.QtGui import *
 from qtpy.QtCore import *
 from qtpy.QtWidgets import *
 from PyQt5.QtWidgets import *
+# from PySide6.QtWidgets import *
 from qtpy import QtGui,QtCore
 from uiCrosshair import Crosshair
 import pyqtgraph as pg
@@ -814,7 +816,13 @@ class KLineWidget(KeyWraper):
 # 功能测试
 ########################################################################
 import sys
+import os
 if __name__ == '__main__':
+    log_dir = os.path.join(os.getcwd(), 'log')
+    if not os.path.exists(log_dir):
+        os.mkdir(log_dir)
+    cgitb.enable(format='text', logdir=log_dir)
+    print(1)
     app = QApplication(sys.argv)
     # 界面设置
     cfgfile = QtCore.QFile('css.qss')
@@ -822,11 +830,12 @@ if __name__ == '__main__':
     styleSheet = cfgfile.readAll()
     styleSheet = str(styleSheet, encoding='utf8')
     app.setStyleSheet(styleSheet)
+    print(2)
     # K线界面
     ui = KLineWidget()
     ui.show()
     ui.KLtitle.setText('rb1701',size='20pt')
     ui.loadData(pd.read_csv('data.csv'))
-    # ui.loadData(pd.DataFrame.from_csv('data.csv'))
     ui.refreshAll()
+    print(3)
     app.exec_()

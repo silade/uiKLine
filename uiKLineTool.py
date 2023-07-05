@@ -2,8 +2,8 @@
 import importlib
 from PyQt5 import sip
 # import sip
-sip.setapi("QString", 2)
-sip.setapi("QVariant", 2)
+# sip.setapi("QString", 2)
+# sip.setapi("QVariant", 2)
 import sys
 
 importlib.reload(sys)

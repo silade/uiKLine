@@ -230,6 +230,8 @@ class Crosshair(QtCore.QObject):
             else:
                 self.textPrices[i].hide()
 
+        print(self.showHLine)
+
         # 设置坐标
         self.__textInfo.setPos(tl[0])
         self.__textSig.setPos(br[0].x(), tl[0].y())
