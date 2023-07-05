@@ -14,7 +14,6 @@ from qtpy.QtGui import *
 from qtpy.QtCore import *
 from qtpy.QtWidgets import *
 from PyQt5.QtWidgets import *
-# from PySide6.QtWidgets import *
 from qtpy import QtGui,QtCore
 from uiCrosshair import Crosshair
 import pyqtgraph as pg
